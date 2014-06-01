@@ -22,7 +22,7 @@ body {
 
 #social h2 {font-size: 30px; font-family: calibri; color: yellow;}
 
-/* height:600; main_contentden aldým*/
+/* height:600; main_contentden aldï¿½m*/
 #icerik{width: 688px;  padding: 5px; border-right: 2px solid gray; float: left; background: white; margin-left: 4px;}
 
 #icerik p{padding: 5px;}
@@ -46,8 +46,8 @@ body {
 #footer{width: 100%; height: 80px; background:orange; clear: both;}
 
 #logo {float:left; width: 200px; height: 100px; border: 1px solid gray;}
-#banner{float: right; margin-right: 0px;}
-#banner img{width: 798px; height: 100px; float: left; margin-left: 0px; }
+#banner{float: right; margin-right: 0;}
+#banner img{width: 798px; height: 100px; float: left; margin-left: 0; }
 
 #ul{padding: 8px;}
 #ul li{list-style: none; display: inline;}

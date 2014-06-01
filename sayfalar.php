@@ -1,75 +1,77 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<title> Mark Zuckerberg Fan Sitesi </title>
-	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
-</head>
-<body>
-	<div> <?php include("includes/header.php"); ?></div>
-	<div> <?php include("includes/menu.php"); ?></div>
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title> Mark Zuckerberg Fan Sitesi </title>
+		<link rel="stylesheet" type="text/css" href="style.css" media="all"/>
+
+	</head>
+
+	<body>
+
+		<div> <?php include("includes/header.php"); ?></div>
+		<div> <?php include("includes/menu.php"); ?></div>
 
 
-	
-<div id="icerik">
-<?php
-    include"includes/baglan.php";
-	
-	if(isset($_GET['id'])){
+		<div id="icerik">
 
-		$sayfa_id = $_GET['id'];
+			<?php
 
-	$run = mysql_query("SELECT * FROM icerikler WHERE id='$sayfa_id'");
-// icerikler tablosunda ki veriyi gelen id degerine göre yani $sayfa_id ye göre listeliyoruz
+			include "includes/baglan.php";
 
-/* verileri while içindeki diziye döndürüp mysql tablosundaki alan adlarına göre dizi indisi alan,
-$row degiskenini tablo alan adlarına uygun degiskenlere atıyoruz */ 
-	while ($row = mysql_fetch_array($run)) {
-			$id = $row['id'];	
-			$baslik = $row['baslik'];
-			$tarih = $row['tarih'];
-			$yazar = $row['yazar'];
-			$image = $row['image'];
-		//	$keyword = $row['keyword'];
-			$icerik = $row['icerik']; // substr fonksiyonunu kaldırıyoruz bütün iceriği göstermek için
+			if (isset($_GET['id'])) {
 
-?>
+				$sayfa_id = $_GET['id'];
 
-<!-- while içinde dizi indis adlarına atadığımız degişlenleri yazdırıyoruz -->
-	<h2>
-		<a href="sayfalar.php?id=<?php  echo $id; ?>">
-		<?php echo $baslik;  ?>   </a></h2>
+				// icerikler tablosunda ki veriyi gelen id degerine göre yani $sayfa_id ye göre listeliyoruz
+				$run = mysql_query("SELECT * FROM icerikler WHERE id=$sayfa_id");
 
-	<p align="left"> Tarih: <b> <?php echo $tarih;  ?></b></p>
-	<p align="right"><b><?php echo $yazar; ?></b></p>
+				/*
+				 * verileri while içindeki diziye döndürüp mysql tablosundaki alan adlarına göre dizi indisi alan,
+				 * $row degiskenini tablo alan adlarına uygun degiskenlere atıyoruz
+				 */
+				while ($row = mysql_fetch_array($run)) {
 
-	<center> <img src="images/<?php echo $image; ?>" alt="" width="500" height="400"> </center>
-	<p align="justfy"> <?php echo $icerik; ?> </p> 
-	
-	
+					$id = $row['id'];
+					$baslik = $row['baslik'];
+					$tarih = $row['tarih'];
+					$yazar = $row['yazar'];
+					$image = $row['image'];
+					//	$keyword = $row['keyword'];
+					$icerik = $row['icerik']; // substr fonksiyonunu kaldırıyoruz bütün iceriği göstermek için
 
+					?>
 
-<?php } } ?>
-</div>	
+					<!-- while içinde dizi indis adlarına atadığımız degişlenleri yazdırıyoruz -->
 
+					<h2>
+						<a href="sayfalar.php?id=<?php echo $id; ?>">
+							<?php echo $baslik; ?>
+						</a>
+					</h2>
 
+					<p align="left"> Tarih: <b> <?php echo $tarih; ?></b></p>
+					<p align="right"><b><?php echo $yazar; ?></b></p>
 
+					<center><img src="images/<?php echo $image; ?>" alt="" width="500" height="400"></center>
+					<p align="justfy"> <?php echo $icerik; ?> </p>
 
+				<?php
 
+				}
+			}
 
+			?>
 
+		</div>
 
-	<div> <?php include("includes/sidebar.php"); ?></div>
+		<div> <?php include("includes/sidebar.php"); ?></div>
 
+		<div id="footer"> Footer</div>
 
+	</body>
 
-
-
-	
-	
-	<div id="footer"> Footer </div>
-		
-	
-
-</body>
 </html>
