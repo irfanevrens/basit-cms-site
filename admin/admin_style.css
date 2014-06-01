@@ -1,0 +1,43 @@
+body
+{
+ background: white;
+ padding: 0; margin: 0;
+
+ }
+
+#header 
+{
+color: blue;
+width: 100%; background: #1999E5; height: 100px; border-bottom: 2px solid blue; margin: 0px;
+}
+#header h1 a{ text-decoration: none; font-family: arial; }
+
+#header  h1{color: black; font-size: 40px; font-family: Arial; text-align: center; padding-top: 20px; font-size: 2em;
+}
+
+#sidebar 
+{
+width: 250px; float: left; background: #1999E5; border-right: 1px solid blue; margin-right: 0;
+height: 600px;
+}
+
+#sidebar h2 { text-align: center; font-size: 2em; color: brown; font-size: }
+
+#sidebar h2 a{ text-decoration: none; font-size: 20px; font-family: arial; }
+
+#sidebar div { text-align: center; width: 100px; height: 30px; border: 2px solid red; background-color: white; margin-right: auto; margin-left: auto;  display: table ; vertical-align: middle; margin-top: 20px; }
+
+#sidebar div h2{ padding-top: 0px;font-size: 20px; font-family: arial; }
+
+#welcome {margin: 10px; padding: 10px; text-align: center; color: #1999E5;}
+
+#admin {width: 750px; height: 100%; text-align: center; float: right; background: white;}
+
+ #sidebar .hg{ color:red;  font-size: 16px;  text-decoration: underline; font-family: arial; text-decoration: none; background-color: white; width: 100%; }  
+
+
+
+
+
+
+ta
